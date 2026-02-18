@@ -1,7 +1,9 @@
 package br.com.alurafood.pedidos.service;
 
+import br.com.alurafood.pedidos.dto.ItemDoPedidoDto;
 import br.com.alurafood.pedidos.dto.PedidoDto;
 import br.com.alurafood.pedidos.dto.StatusDto;
+import br.com.alurafood.pedidos.model.ItemDoPedido;
 import br.com.alurafood.pedidos.model.Pedido;
 import br.com.alurafood.pedidos.model.Status;
 import br.com.alurafood.pedidos.repository.PedidoRepository;
@@ -74,4 +76,5 @@ public class PedidoService {
         pedido.setStatus(Status.PAGO);
         repository.atualizaStatus(Status.PAGO, pedido);
     }
+
 }

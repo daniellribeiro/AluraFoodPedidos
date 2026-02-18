@@ -1,5 +1,6 @@
 package br.com.alurafood.pedidos.repository;
 
+import br.com.alurafood.pedidos.model.ItemDoPedido;
 import br.com.alurafood.pedidos.model.Pedido;
 import br.com.alurafood.pedidos.model.Status;
 import org.springframework.data.jpa.repository.JpaRepository;
@@ -16,5 +17,6 @@ public interface PedidoRepository extends JpaRepository<Pedido, Long> {
     @Query(value = "SELECT p from Pedido p LEFT JOIN FETCH p.itens where p.id = :id")
     Pedido porIdComItens(Long id);
 
-
+    @Query(value = "SELECT i.pedido FROM ItemDoPedido i WHERE i.id = :id")
+    ItemDoPedido findItensPedido(Long id);
 }
